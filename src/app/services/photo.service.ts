@@ -20,6 +20,7 @@ export class PhotoService {
     // Retrieve cached photo array data
     const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
     this.photos = JSON.parse(photoList.value) || [];
+    console.log('photos', this.photos);
 
     // If running on the web...
     if (!this.platform.is('hybrid')) {
